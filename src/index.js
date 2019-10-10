@@ -1,6 +1,7 @@
 require("dotenv").config();
 import express from "express";
 import cors from 'cors';
+import path from "path"
 
 import appRoutes from "./controllers";
 import { errorHandler } from "./middleware";
@@ -11,6 +12,12 @@ app.use(cors());
 app.use(express.json());
 app.use(express.static('public'))
 
+
+
+// viewed at http://localhost:8080
+app.get('/', function(req, res) {
+    res.sendFile(path.join(__dirname + '/public/index.html'));
+});
 
 appRoutes(app);
 
