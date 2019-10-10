@@ -1,0 +1,6 @@
+{
+  "name": "nodejs-heroku-docker",
+  "description": "my block chain demo",
+  "image": "heroku/nodejs",
+  "addons": []
+}
