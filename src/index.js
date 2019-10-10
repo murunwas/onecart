@@ -8,22 +8,18 @@ import { errorHandler } from "./middleware";
 
 const app = express();
 
+app.use(express.static(__dirname + '/public'))
 app.use(cors());
 app.use(express.json());
-app.use(express.static('public'))
 
+
+appRoutes(app);
 
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, './public/index.html'));
 });
 
-
-appRoutes(app);
-
 errorHandler(app);
-
-
-
 
 
 const PORT= process.env.PORT || 3100;

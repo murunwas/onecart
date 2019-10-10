@@ -29,15 +29,15 @@ require("dotenv").config();
 
 const app = (0, _express2.default)();
 
+app.use(_express2.default.static(__dirname + '/public'));
 app.use((0, _cors2.default)());
 app.use(_express2.default.json());
-app.use(_express2.default.static('public'));
+
+(0, _controllers2.default)(app);
 
 app.get('/', (req, res) => {
   res.sendFile(_path2.default.join(__dirname, './public/index.html'));
 });
-
-(0, _controllers2.default)(app);
 
 (0, _middleware.errorHandler)(app);
 
