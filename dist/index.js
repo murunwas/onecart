@@ -1,7 +1,7 @@
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
 
 var _express = require("express");
@@ -33,9 +33,8 @@ app.use((0, _cors2.default)());
 app.use(_express2.default.json());
 app.use(_express2.default.static('public'));
 
-// viewed at http://localhost:8080
-app.get('/', function (req, res) {
-    res.sendFile(_path2.default.join(__dirname + '/public/index.html'));
+app.get('/', (req, res) => {
+  res.sendFile(_path2.default.join(__dirname, './public/index.html'));
 });
 
 (0, _controllers2.default)(app);
