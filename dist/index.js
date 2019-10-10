@@ -33,7 +33,7 @@ app.use(_express2.default.static('public'));
 
 (0, _middleware.errorHandler)(app);
 
-const PORT = 3100;
+const PORT = process.env.PORT || 3100;
 
 app.listen(PORT, () => console.log("running on port : " + PORT));
 exports.default = app;
